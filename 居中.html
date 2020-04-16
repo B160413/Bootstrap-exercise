@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .container1{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+        .flex-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flex {
+            margin: auto;
+        }
+        .absolute1{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .absolute2{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .container-after{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .container-after::after{
+            content: '';
+            vertical-align: middle;
+            display: inline-block;
+            height: 100%;
+        }
+        .conntainer-after>img{
+            vertical-align: middle;
+        }
+        .grid{
+            align-self: center;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container1 flex-center">
+                <div><img src="planets.gif"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container1" style="display: flex">
+                <div class="flex"><img src="planets.gif"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container1" style="position: relative">
+                <img class="absolute1" src="planets.gif">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container1" style="position: relative">
+                <img class="absolute2" src="planets.gif">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container-after">
+                <img src="planets.gif">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container1" style="display: grid">
+                <img class="grid" src="planets.gif">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
